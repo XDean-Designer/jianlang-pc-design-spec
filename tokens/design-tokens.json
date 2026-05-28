@@ -1,0 +1,119 @@
+{
+  "appName": "剑琅管家",
+  "appLogo": "assets/LOGO2.png",
+  "platform": "pc",
+  "version": "1.0.0",
+  "designCanvas": {
+    "width": 1440,
+    "height": 900,
+    "minWidth": 1280
+  },
+  "references": {
+    "figmaArcoPro": "https://www.figma.com/design/YKaA4EkQ9bcVjeqvKY3tsA/Arco-Design-Pro-2.0-%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%BA%90--Community-",
+    "figmaNode": "236:30024",
+    "mobileSpec": "https://xdean-designer.github.io/jianlang-design-spec/",
+    "arcoReact": "https://arco.design/react",
+    "arcoPro": "https://github.com/arco-design/arco-design-pro"
+  },
+  "brandTheme": {
+    "color": {
+      "brand1": "#FEF0F1",
+      "brand2": "#FDD9DC",
+      "brand3": "#FCBDC3",
+      "brand4": "#FB9BA3",
+      "brand5": "#F97883",
+      "brand6": "#F32F41",
+      "brand7": "#D92939",
+      "brand8": "#BF2432",
+      "brand9": "#991D28",
+      "brand10": "#73161E",
+      "brandAux1": "#FFD5D9",
+      "brandAux2": "#FFF2F2",
+      "primary": "#F32F41",
+      "primaryHover": "#F97883",
+      "primaryActive": "#D92939",
+      "primaryLight": "#FEF0F1",
+      "success": "#00B42A",
+      "successLight": "#E8FFEA",
+      "warning": "#FF7D00",
+      "warningLight": "#FFF7E8",
+      "error": "#F53F3F",
+      "errorLight": "#FFECE8",
+      "info": "#165DFF",
+      "infoLight": "#E8F3FF",
+      "bgPage": "#F2F3F5",
+      "bgContainer": "#FFFFFF",
+      "bgSecondary": "#F7F8FA",
+      "border": "#E5E6EB",
+      "borderFocus": "#F32F41",
+      "textPrimary": "#1D2129",
+      "textSecondary": "#4E5969",
+      "textTertiary": "#86909C",
+      "textDisabled": "#C9CDD4",
+      "textBrand": "#F32F41",
+      "textLink": "#165DFF",
+      "textAnti": "#FFFFFF",
+      "mobileAlign": {
+        "textPrimary": "#333333",
+        "textSecondary": "#929292",
+        "border": "#D7D7D5",
+        "bgPage": "#F7F7F7"
+      }
+    },
+    "font": {
+      "family": "PingFang SC, Microsoft YaHei, sans-serif",
+      "familyData": "TCloudNumber",
+      "h1": { "size": 20, "lineHeight": 28, "weight": 500 },
+      "h2": { "size": 16, "lineHeight": 24, "weight": 500 },
+      "h3": { "size": 14, "lineHeight": 22, "weight": 500 },
+      "body": { "size": 14, "lineHeight": 22, "weight": 400 },
+      "caption": { "size": 12, "lineHeight": 20, "weight": 400 },
+      "data": { "size": 24, "lineHeight": 32, "weight": 700 },
+      "currencyGap": 4
+    },
+    "radius": {
+      "sm": 2,
+      "md": 4,
+      "lg": 8,
+      "xl": 12
+    },
+    "shadow": {
+      "1": "0 1px 2px rgba(0, 0, 0, 0.06)",
+      "2": "0 4px 10px rgba(0, 0, 0, 0.08)",
+      "3": "0 8px 24px rgba(0, 0, 0, 0.12)"
+    },
+    "chart": {
+      "series": ["#F32F41", "#165DFF", "#14C9C9", "#00B42A", "#FF7D00", "#722ED1"],
+      "axis": "#86909C",
+      "splitLine": "#E5E6EB",
+      "tooltipBg": "#FFFFFF",
+      "areaGradientBrand": ["rgba(243,47,65,0.25)", "rgba(243,47,65,0.02)"],
+      "heatmapGradient": ["#FFF2F2", "#FCBDC3", "#F97883", "#F32F41", "#D92939"],
+      "defaultHeight": 300,
+      "library": "echarts"
+    },
+    "spacer": {
+      "1": 4,
+      "2": 8,
+      "3": 12,
+      "4": 16,
+      "5": 20,
+      "6": 24,
+      "8": 32,
+      "10": 40
+    },
+    "layout": {
+      "siderWidth": 220,
+      "siderCollapsedWidth": 48,
+      "headerHeight": 60,
+      "contentPadding": 24,
+      "contentPaddingCompact": 16,
+      "tableRowHeight": 40,
+      "tableRowHeightLoose": 48,
+      "buttonHeight": 32,
+      "buttonHeightLarge": 36,
+      "inputHeight": 32,
+      "formLabelWidth": 100
+    }
+  }
+}

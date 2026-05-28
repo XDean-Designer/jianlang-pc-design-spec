@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>剑琅管家 · PC 端设计规范 v1.0</title>
+  <link rel="icon" href="assets/LOGO2.png" type="image/png" />
+  <link rel="stylesheet" href="css/spec.css" />
+</head>
+<body>
+  <div class="app">
+  <aside class="doc-sider" id="docSider">
+    <div class="doc-sider__brand">
+      <img class="logo-mark" src="assets/LOGO2.png" alt="剑琅管家" width="36" height="36" />
+      <div class="doc-sider__brand-text">
+        <strong>剑琅管家</strong>
+        <span>PC 设计规范 v1.0</span>
+      </div>
+    </div>
+    <div class="doc-search">
+      <input type="search" id="navSearch" placeholder="搜索章节…" autocomplete="off" />
+    </div>
+    <nav class="doc-nav" id="docNav">
+      <a href="#hero" class="active">首页</a>
+      <a href="#global">★ 全局强制 UI</a>
+      <a href="#overview">概述</a>
+      <a href="#principles">设计原则</a>
+      <a href="#colors">色彩系统</a>
+      <a href="#typography">字体排版</a>
+      <a href="#layout">布局间距</a>
+      <a href="#radius-shadow">圆角与阴影</a>
+      <a href="#components">组件库</a>
+      <a href="#charts">数据可视化</a>
+      <a href="#templates">页面模板</a>
+      <a href="#business">B 端业务</a>
+      <a href="#tokens">Design Token</a>
+      <a href="#ai-prompt">AI Prompt</a>
+    </nav>
+    <div class="doc-sider__foot">
+      <button type="button" class="btn btn--outline btn--sm" id="toggleSiderDemo">折叠侧栏演示</button>
+    </div>
+  </aside>
+
+  <div class="doc-main">
+    <header class="doc-header">
+      <button type="button" class="icon-btn" id="mobileNavBtn" aria-label="打开导航">☰</button>
+      <span class="doc-header__title">剑琅管家 · PC 端页面设计规范</span>
+      <div class="doc-header__actions">
+        <a href="https://www.figma.com/design/YKaA4EkQ9bcVjeqvKY3tsA/" target="_blank" rel="noopener" class="btn btn--text">Arco Pro Figma</a>
+        <a href="https://xdean-designer.github.io/jianlang-design-spec/" target="_blank" rel="noopener" class="btn btn--text">移动端规范</a>
+        <button type="button" class="btn btn--primary" id="copyAllTokens">复制 Token JSON</button>
+      </div>
+    </header>
+
+    <main class="doc-content" id="docContent">
+      <!-- Hero -->
+      <section id="hero" class="section hero">
+        <div class="hero__brand">
+          <img class="hero__logo" src="assets/LOGO2.png" alt="剑琅管家 Logo" width="72" height="72" />
+          <div class="hero__brand-text">
+            <strong>剑琅管家</strong>
+            <span>SaaS 店务管理 · 官方品牌标识 LOGO2.png</span>
+          </div>
+        </div>
+        <div class="hero__badge">Design System v1.0 · 1440 × 900</div>
+        <h1>剑琅管家<br /><span class="text-brand">PC 端</span>页面设计规范</h1>
+        <p class="hero__desc">SaaS 店务管理系统 · 基于 Arco Design Pro 布局语义 · 品牌主色 <code>#F32F41</code> · 与剑琅联盟移动端品牌对齐</p>
+        <div class="hero__chips">
+          <span class="chip">侧栏 220px</span>
+          <span class="chip">顶栏 60px</span>
+          <span class="chip">主色 #F32F41</span>
+          <span class="chip">Arco React</span>
+        </div>
+        <div class="hero__preview" id="layoutPreview">
+          <div class="mini-app" data-collapsed="false">
+            <div class="mini-app__header">
+              <span class="mini-dot"></span><span class="mini-dot"></span><span class="mini-dot"></span>
+              <span class="mini-app__header-title">剑琅管家 — 工作台</span>
+            </div>
+            <div class="mini-app__body">
+              <div class="mini-sider">
+                <img class="mini-sider__logo" src="assets/LOGO2.png" alt="" width="28" height="28" />
+                <div class="mini-menu-item active"><i></i><span>工作台</span></div>
+                <div class="mini-menu-item"><i></i><span>收银</span></div>
+                <div class="mini-menu-item"><i></i><span>会员</span></div>
+                <div class="mini-menu-item"><i></i><span>预约</span></div>
+                <div class="mini-menu-item"><i></i><span>报表</span></div>
+              </div>
+              <div class="mini-content">
+                <div class="mini-navbar">会员管理 / 会员列表</div>
+                <div class="mini-stats">
+                  <div class="mini-stat"><label>今日营业额</label><strong class="amount">¥12,860.00</strong></div>
+                  <div class="mini-stat"><label>新增会员</label><strong>28</strong></div>
+                  <div class="mini-stat"><label>待处理预约</label><strong class="text-brand">6</strong></div>
+                </div>
+                <div class="mini-table-wrap">
+                  <table class="mini-table">
+                    <thead><tr><th>会员</th><th>手机</th><th>余额</th><th>状态</th></tr></thead>
+                    <tbody>
+                      <tr><td>张女士</td><td>138****6688</td><td class="amount-sm">¥2,000.99</td><td><span class="tag tag--brand">活跃</span></td></tr>
+                      <tr><td>李先生</td><td>139****1122</td><td class="amount-sm">¥580.00</td><td><span class="tag tag--success">正常</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="preview-hint">点击左下角「折叠侧栏演示」查看 48px 折叠态</p>
+        </div>
+      </section>
+
+      <!-- Global -->
+      <section id="global" class="section">
+        <h2>★ 全局强制 UI</h2>
+        <p class="section-lead">最高优先级约束，优先于 Arco 默认蓝色主题。设计、开发与 AI 出图须先满足本章。</p>
+        <div class="rule-grid" id="globalRules"></div>
+      </section>
+
+      <!-- Overview -->
+      <section id="overview" class="section">
+        <h2>概述与品牌关系</h2>
+        <div class="brand-showcase card">
+          <img src="assets/LOGO2.png" alt="剑琅管家 Logo" width="96" height="96" class="brand-showcase__logo" />
+          <div>
+            <h3>品牌标识 · LOGO2.png</h3>
+            <p>圆形徽章：红色底 #F32F41 + 剑盾图形。PC 侧栏推荐 24–36px，登录/关于页 72–96px，禁止变形、改色或加投影。</p>
+            <p class="text-tertiary">文件路径：<code>assets/LOGO2.png</code></p>
+          </div>
+        </div>
+        <table class="data-table">
+          <thead><tr><th>维度</th><th>剑琅联盟（移动）</th><th>剑琅管家（PC）</th></tr></thead>
+          <tbody>
+            <tr><td>主色</td><td><span class="swatch-inline" style="background:#F32F41"></span>#F32F41</td><td><span class="swatch-inline" style="background:#F32F41"></span>#F32F41</td></tr>
+            <tr><td>布局</td><td>390 单栏 + TabBar</td><td>侧栏 + 顶栏 + 内容区</td></tr>
+            <tr><td>按钮</td><td>高 48px</td><td>高 32px（默认）</td></tr>
+            <tr><td>层次</td><td>无阴影</td><td>Arco 轻阴影</td></tr>
+            <tr><td>组件库</td><td>Flutter / 自研</td><td>Arco Design React + Pro</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Principles -->
+      <section id="principles" class="section">
+        <h2>设计原则</h2>
+        <div class="card-grid card-grid--4">
+          <article class="card"><h3>高效</h3><p>常用路径 ≤3 次点击；列表支持筛选、批量与快捷键。</p></article>
+          <article class="card"><h3>清晰</h3><p>侧栏导航、顶栏上下文、内容区任务分离；状态色+文案+图标。</p></article>
+          <article class="card"><h3>一致</h3><p>统一 Arco 变体；复用 Pro 列表/详情/表单/仪表盘模板。</p></article>
+          <article class="card"><h3>专业</h3><p>品牌红用于关键操作，禁止整页红底铺色。</p></article>
+        </div>
+      </section>
+
+      <!-- Colors -->
+      <section id="colors" class="section">
+        <h2>色彩系统</h2>
+        <p class="section-lead">点击色块复制色值 · <span id="copyHint" class="text-tertiary">已复制会显示提示</span></p>
+        <h3>品牌色阶</h3>
+        <div class="palette" id="brandPalette"></div>
+        <h3>功能色</h3>
+        <div class="func-colors" id="funcColors"></div>
+        <h3>中性色</h3>
+        <div class="palette palette--neutral" id="neutralPalette"></div>
+      </section>
+
+      <!-- Typography -->
+      <section id="typography" class="section">
+        <h2>字体排版</h2>
+        <div class="type-samples">
+          <div class="type-row type-h1"><span class="type-label">H1 · 20/28 · 500</span><span>会员管理</span></div>
+          <div class="type-row type-h2"><span class="type-label">H2 · 16/24 · 500</span><span>基础信息</span></div>
+          <div class="type-row type-body"><span class="type-label">Body · 14/22 · 400</span><span>适用于表格、表单与正文说明文字，保证 B 端信息密度与可读性平衡。</span></div>
+          <div class="type-row type-caption"><span class="type-label">Caption · 12/20</span><span>辅助说明、图表坐标轴标签</span></div>
+          <div class="type-row type-data">
+            <span class="type-label">Data · TCloudNumber</span>
+            <span class="amount-lg"><span class="currency">¥</span><span class="num">128,640.00</span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Layout -->
+      <section id="layout" class="section">
+        <h2>布局与间距</h2>
+        <div class="layout-tokens" id="layoutTokens"></div>
+        <h3>间距尺</h3>
+        <div class="spacing-ruler" id="spacingRuler"></div>
+      </section>
+
+      <!-- Radius & Shadow -->
+      <section id="radius-shadow" class="section">
+        <h2>圆角与阴影</h2>
+        <div class="radius-demo" id="radiusDemo"></div>
+        <div class="shadow-demo" id="shadowDemo"></div>
+      </section>
+
+      <!-- Components -->
+      <section id="components" class="section">
+        <h2>组件库（可交互预览）</h2>
+        <div class="component-lab">
+          <div class="lab-block">
+            <h3>Button</h3>
+            <div class="btn-row">
+              <button type="button" class="btn btn--primary">主要按钮</button>
+              <button type="button" class="btn btn--primary btn--lg">大号主要</button>
+              <button type="button" class="btn btn--outline">描边按钮</button>
+              <button type="button" class="btn btn--secondary">次要按钮</button>
+              <button type="button" class="btn btn--text">文字按钮</button>
+              <button type="button" class="btn btn--danger">危险按钮</button>
+              <button type="button" class="btn btn--primary" disabled>禁用</button>
+            </div>
+          </div>
+          <div class="lab-block">
+            <h3>Input / Select</h3>
+            <div class="form-row">
+              <label>客户名称</label>
+              <input type="text" class="input" placeholder="请输入客户名称" />
+            </div>
+            <div class="form-row">
+              <label>门店</label>
+              <select class="input select">
+                <option>全部门店</option>
+                <option>旗舰店</option>
+                <option>二店</option>
+              </select>
+            </div>
+          </div>
+          <div class="lab-block">
+            <h3>Tag</h3>
+            <div class="tag-row">
+              <span class="tag tag--brand">待审批</span>
+              <span class="tag tag--success">已完成</span>
+              <span class="tag tag--warning">即将到期</span>
+              <span class="tag tag--error">已驳回</span>
+              <span class="tag tag--gray">草稿</span>
+            </div>
+          </div>
+          <div class="lab-block">
+            <h3>Switch</h3>
+            <label class="switch">
+              <input type="checkbox" checked id="demoSwitch" />
+              <span class="switch__slider"></span>
+              <span class="switch__label">启用会员积分</span>
+            </label>
+          </div>
+          <div class="lab-block">
+            <h3>Tabs</h3>
+            <div class="tabs" id="demoTabs">
+              <button type="button" class="tabs__item active" data-tab="all">全部</button>
+              <button type="button" class="tabs__item" data-tab="pending">待处理</button>
+              <button type="button" class="tabs__item" data-tab="done">已完成</button>
+            </div>
+            <div class="tabs-panel" id="tabsPanel">当前筛选：<strong>全部</strong> 订单</div>
+          </div>
+          <div class="lab-block">
+            <h3>Table + Pagination</h3>
+            <div class="table-card">
+              <table class="data-table data-table--hover">
+                <thead>
+                  <tr><th><input type="checkbox" id="checkAll" /></th><th>订单号</th><th>客户</th><th>金额</th><th>状态</th><th>操作</th></tr>
+                </thead>
+                <tbody id="demoTableBody"></tbody>
+              </table>
+              <div class="pagination" id="demoPagination"></div>
+            </div>
+          </div>
+          <div class="lab-block">
+            <h3>Modal / Drawer</h3>
+            <div class="btn-row">
+              <button type="button" class="btn btn--primary" id="openModal">打开对话框</button>
+              <button type="button" class="btn btn--outline" id="openDrawer">打开抽屉</button>
+            </div>
+          </div>
+          <div class="lab-block">
+            <h3>Message</h3>
+            <div class="btn-row">
+              <button type="button" class="btn btn--secondary btn--sm" data-msg="success">成功</button>
+              <button type="button" class="btn btn--secondary btn--sm" data-msg="warning">警告</button>
+              <button type="button" class="btn btn--secondary btn--sm" data-msg="error">错误</button>
+              <button type="button" class="btn btn--secondary btn--sm" data-msg="info">信息</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Charts -->
+      <section id="charts" class="section">
+        <h2>数据可视化 · 图表组件</h2>
+        <p class="section-lead">面向经营分析、报表与仪表盘场景。强调<strong>可读、可比对、可溯源</strong>，体现店务 SaaS 的专业性与数据科学性。技术实现推荐 <strong>ECharts</strong> / Arco Charts（G2）。</p>
+
+        <div class="chart-principles card">
+          <h3>图表设计原则</h3>
+          <div class="chart-principles__grid">
+            <div><strong>克制用色</strong><span>主指标品牌红，对比系列使用蓝/青/橙功能色，单图系列 ≤5</span></div>
+            <div><strong>精确刻度</strong><span>坐标轴留白 8%，金额千分位，百分比 1 位小数</span></div>
+            <div><strong>辅助对齐</strong><span>浅灰网格线 #E5E6EB，虚线参考均值/目标线</span></div>
+            <div><strong>交互一致</strong><span>Tooltip 白底 shadow-2；图例可点击切换；支持时间粒度切换</span></div>
+          </div>
+        </div>
+
+        <div class="chart-palette" id="chartPalette"></div>
+
+        <div class="chart-toolbar card">
+          <span class="chart-toolbar__label">演示 · 时间粒度</span>
+          <div class="chart-period" id="chartPeriod">
+            <button type="button" class="chart-period__btn active" data-period="7">近 7 日</button>
+            <button type="button" class="chart-period__btn" data-period="30">近 30 日</button>
+            <button type="button" class="chart-period__btn" data-period="90">本季度</button>
+          </div>
+          <span class="chart-toolbar__hint text-tertiary">切换后折线/柱状/面积图数据联动刷新</span>
+        </div>
+
+        <div class="chart-dashboard card">
+          <div class="chart-dashboard__stats">
+            <div class="stat-kpi">
+              <label>本月营业额</label>
+              <div class="stat-kpi__value amount">¥1,286,400</div>
+              <div class="stat-kpi__delta stat-kpi__delta--up">↑ 12.5% <span>较上月</span></div>
+            </div>
+            <div class="stat-kpi">
+              <label>客单价</label>
+              <div class="stat-kpi__value amount">¥186.20</div>
+              <div class="stat-kpi__delta stat-kpi__delta--up">↑ 3.2%</div>
+            </div>
+            <div class="stat-kpi">
+              <label>复购率</label>
+              <div class="stat-kpi__value">38.6%</div>
+              <div class="stat-kpi__delta stat-kpi__delta--down">↓ 0.8%</div>
+            </div>
+            <div class="stat-kpi">
+              <label>目标完成</label>
+              <div class="stat-kpi__value text-brand">86.4%</div>
+              <div class="stat-kpi__delta"><span>截止今日</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-grid">
+          <article class="chart-card chart-card--wide">
+            <header class="chart-card__head">
+              <div>
+                <h3>营业额趋势</h3>
+                <p>多系列折线图 · 对比去年同期</p>
+              </div>
+              <span class="chart-badge">Line</span>
+            </header>
+            <div id="chartLine" class="chart-canvas" role="img" aria-label="营业额折线图"></div>
+          </article>
+
+          <article class="chart-card">
+            <header class="chart-card__head">
+              <div>
+                <h3>客流曲线</h3>
+                <p>平滑曲线 · 时段分布</p>
+              </div>
+              <span class="chart-badge">Smooth Line</span>
+            </header>
+            <div id="chartSmooth" class="chart-canvas"></div>
+          </article>
+
+          <article class="chart-card">
+            <header class="chart-card__head">
+              <div>
+                <h3>门店业绩对比</h3>
+                <p>分组柱状图</p>
+              </div>
+              <span class="chart-badge">Bar</span>
+            </header>
+            <div id="chartBar" class="chart-canvas"></div>
+          </article>
+
+          <article class="chart-card">
+            <header class="chart-card__head">
+              <div>
+                <h3>服务类目销售</h3>
+                <p>堆叠柱状图 · 构成分析</p>
+              </div>
+              <span class="chart-badge">Stacked Bar</span>
+            </header>
+            <div id="chartStackBar" class="chart-canvas"></div>
+          </article>
+
+          <article class="chart-card">
+            <header class="chart-card__head">
+              <div>
+                <h3>会员增长</h3>
+                <p>面积图 · 累计趋势</p>
+              </div>
+              <span class="chart-badge">Area</span>
+            </header>
+            <div id="chartArea" class="chart-canvas"></div>
+          </article>
+
+          <article class="chart-card">
+            <header class="chart-card__head">
+              <div>
+                <h3>实收 vs 目标</h3>
+                <p>柱线混合图</p>
+              </div>
+              <span class="chart-badge">Line + Bar</span>
+            </header>
+            <div id="chartMix" class="chart-canvas"></div>
+          </article>
+
+          <article class="chart-card">
+            <header class="chart-card__head">
+              <div>
+                <h3>支付方式占比</h3>
+                <p>环形图 · 结构分布</p>
+              </div>
+              <span class="chart-badge">Donut</span>
+            </header>
+            <div id="chartPie" class="chart-canvas"></div>
+          </article>
+
+          <article class="chart-card">
+            <header class="chart-card__head">
+              <div>
+                <h3>月度目标完成率</h3>
+                <p>仪表盘 · KPI</p>
+              </div>
+              <span class="chart-badge">Gauge</span>
+            </header>
+            <div id="chartGauge" class="chart-canvas chart-canvas--sm"></div>
+          </article>
+
+          <article class="chart-card">
+            <header class="chart-card__head">
+              <div>
+                <h3>经营健康度</h3>
+                <p>雷达图 · 五维评估</p>
+              </div>
+              <span class="chart-badge">Radar</span>
+            </header>
+            <div id="chartRadar" class="chart-canvas"></div>
+          </article>
+
+          <article class="chart-card">
+            <header class="chart-card__head">
+              <div>
+                <h3>员工业绩 TOP10</h3>
+                <p>横向条形图 · 排行</p>
+              </div>
+              <span class="chart-badge">Horizontal Bar</span>
+            </header>
+            <div id="chartHBar" class="chart-canvas"></div>
+          </article>
+
+          <article class="chart-card chart-card--wide">
+            <header class="chart-card__head">
+              <div>
+                <h3>预约热力分布</h3>
+                <p>热力图 · 星期 × 时段</p>
+              </div>
+              <span class="chart-badge">Heatmap</span>
+            </header>
+            <div id="chartHeatmap" class="chart-canvas"></div>
+          </article>
+        </div>
+
+        <div class="chart-spec-table card">
+          <h3>图表组件规格速查</h3>
+          <table class="data-table">
+            <thead>
+              <tr><th>类型</th><th>典型场景</th><th>高度建议</th><th>系列色顺序</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>折线图 Line</td><td>营业额/订单趋势、同比</td><td>320px</td><td>brand → info → success</td></tr>
+              <tr><td>曲线图 Smooth</td><td>客流、到店时段</td><td>280px</td><td>info / brand</td></tr>
+              <tr><td>柱状图 Bar</td><td>门店/品类对比</td><td>300px</td><td>brand 单色或分组多色</td></tr>
+              <tr><td>堆叠柱 Stacked</td><td>构成、渠道占比趋势</td><td>300px</td><td>chart-1 ~ chart-5</td></tr>
+              <tr><td>面积图 Area</td><td>累计会员、库存走势</td><td>280px</td><td>brand 渐变 15%~0%</td></tr>
+              <tr><td>柱线混合</td><td>实收柱 + 目标线</td><td>320px</td><td>柱 brand · 线 warning</td></tr>
+              <tr><td>环形图 Donut</td><td>支付/来源结构</td><td>260px</td><td>chart 序列色</td></tr>
+              <tr><td>仪表盘 Gauge</td><td>目标完成、满意度</td><td>240px</td><td>brand 指针 · gray 底轨</td></tr>
+              <tr><td>雷达图 Radar</td><td>多维经营评分</td><td>300px</td><td>brand 填充 20% 透明度</td></tr>
+              <tr><td>热力图 Heatmap</td><td>预约/排班密度</td><td>280px</td><td>brand 单色渐变阶</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Templates -->
+      <section id="templates" class="section">
+        <h2>页面模板</h2>
+        <div class="card-grid card-grid--2">
+          <article class="card card--clickable" data-template="list">
+            <h3>列表页</h3><p>筛选 Card + Table Card + 批量操作栏</p>
+          </article>
+          <article class="card card--clickable" data-template="detail">
+            <h3>详情页</h3><p>Descriptions + Tabs 子表 + 顶栏操作</p>
+          </article>
+          <article class="card card--clickable" data-template="form">
+            <h3>表单页</h3><p>Steps 分步或分组 Card + 底栏提交</p>
+          </article>
+          <article class="card card--clickable" data-template="dashboard">
+            <h3>工作台</h3><p>Statistic + 快捷入口 + 待办 Table</p>
+          </article>
+        </div>
+        <div class="template-detail card" id="templateDetail">
+          <p class="text-tertiary">点击上方卡片查看结构说明</p>
+        </div>
+      </section>
+
+      <!-- Business -->
+      <section id="business" class="section">
+        <h2>B 端业务规范</h2>
+        <table class="data-table">
+          <thead><tr><th>业务状态</th><th>Tag</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>草稿</td><td><span class="tag tag--gray">草稿</span></td><td>未提交</td></tr>
+            <tr><td>待审批</td><td><span class="tag tag--brand">待审批</span></td><td>进行中</td></tr>
+            <tr><td>已完成</td><td><span class="tag tag--success">已完成</span></td><td>通过/生效</td></tr>
+            <tr><td>已驳回</td><td><span class="tag tag--error">已驳回</span></td><td>失败</td></tr>
+            <tr><td>即将到期</td><td><span class="tag tag--warning">即将到期</span></td><td>需关注</td></tr>
+          </tbody>
+        </table>
+        <ul class="bullet-list">
+          <li>金额：¥ + 千分位 + 2 位小数；数字使用 TCloudNumber-Bold</li>
+          <li>手机：中间 4 位脱敏 138****6688</li>
+          <li>无权限：403 + 联系管理员；无数据：Empty + 新建引导</li>
+        </ul>
+      </section>
+
+      <!-- Tokens -->
+      <section id="tokens" class="section">
+        <h2>Design Token JSON</h2>
+        <pre class="code-block" id="tokenJson"></pre>
+        <button type="button" class="btn btn--outline" id="copyTokenBlock">复制下方 JSON</button>
+      </section>
+
+      <!-- AI Prompt -->
+      <section id="ai-prompt" class="section">
+        <h2>AI 出图 Prompt</h2>
+        <pre class="code-block code-block--prompt" id="aiPrompt"></pre>
+        <button type="button" class="btn btn--primary" id="copyAiPrompt">复制 Prompt</button>
+      </section>
+
+      <footer class="doc-footer">
+        剑琅管家 · PC 端设计规范 v1.0 · 品牌主色 #F32F41 · 参考 Arco Design Pro 2.0
+      </footer>
+    </main>
+  </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="overlay" id="modalOverlay" hidden>
+    <div class="modal" role="dialog" aria-labelledby="modalTitle">
+      <h3 id="modalTitle">确认作废订单？</h3>
+      <p>作废后不可恢复，是否继续操作？</p>
+      <div class="modal__actions">
+        <button type="button" class="btn btn--outline" id="closeModal">取消</button>
+        <button type="button" class="btn btn--danger" id="confirmModal">确认作废</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer -->
+  <div class="overlay overlay--drawer" id="drawerOverlay" hidden>
+    <div class="drawer">
+      <div class="drawer__head">
+        <h3>订单详情</h3>
+        <button type="button" class="icon-btn" id="closeDrawer" aria-label="关闭">×</button>
+      </div>
+      <div class="drawer__body">
+        <dl class="desc-list">
+          <dt>订单号</dt><dd>JL202605280001</dd>
+          <dt>客户</dt><dd>张女士</dd>
+          <dt>实付金额</dt><dd class="amount">¥1,286.00</dd>
+          <dt>状态</dt><dd><span class="tag tag--brand">待收银</span></dd>
+        </dl>
+      </div>
+      <div class="drawer__foot">
+        <button type="button" class="btn btn--outline">打印小票</button>
+        <button type="button" class="btn btn--primary">去收银</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/spec.js"></script>
+</body>
+</html>

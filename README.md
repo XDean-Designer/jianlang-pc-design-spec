@@ -386,7 +386,9 @@
 
 ## 交互式规范站点
 
-**在线地址（部署后）**：`https://<你的GitHub用户名>.github.io/jianlang-pc-design-spec/`
+**在线地址**：https://xdean-designer.github.io/jianlang-pc-design-spec/
+
+**仓库**：https://github.com/XDean-Designer/jianlang-pc-design-spec
 
 发布步骤见 [`DEPLOY.md`](DEPLOY.md)。
 

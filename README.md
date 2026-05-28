@@ -386,7 +386,11 @@
 
 ## 交互式规范站点
 
-双击打开 [`index.html`](index.html)，或在目录下执行：
+**在线地址（部署后）**：`https://<你的GitHub用户名>.github.io/jianlang-pc-design-spec/`
+
+发布步骤见 [`DEPLOY.md`](DEPLOY.md)。
+
+本地预览：双击打开 [`index.html`](index.html)，或在目录下执行：
 
 ```bash
 npx --yes serve .

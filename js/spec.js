@@ -51,7 +51,6 @@
     { title: "圆角", text: "组件 2/4/8px；业务卡片 8px；大面板 12px" },
     { title: "阴影", text: "PC 启用 Arco 轻阴影；禁止渐变背景" },
     { title: "间距", text: "4px 模数：4/8/12/16/20/24/32/40" },
-    { title: "Emoji", text: "可选：有需要时可使用（全局强制 UI 不禁止 Emoji）" },
     { title: "禁止", text: "自创功能图标、整页红底铺色" },
   ];
 

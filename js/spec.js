@@ -39,7 +39,8 @@
 - 背景 #F2F3F5 / 卡片 #FFFFFF；边框 #E5E6EB；文字 #1D2129 / #4E5969
 - 主按钮 32px 高 brand-6 底白字；表格行 40px；圆角 4/8px；轻阴影
 - 图表：ECharts 风格；序列色 brand #F32F41 + info #165DFF；浅灰虚线网格；Tooltip 白底
-- 禁止 emoji、大面积渐变背景、整页红底
+- Emoji：按需可用（空状态/轻提示/营销），单屏 ≤3，禁止替代功能图标
+- 禁止大面积渐变背景、整页红底
 - 业务：[字段与操作说明]`;
 
   const GLOBAL_RULES = [
@@ -50,7 +51,8 @@
     { title: "圆角", text: "组件 2/4/8px；业务卡片 8px；大面板 12px" },
     { title: "阴影", text: "PC 启用 Arco 轻阴影；禁止渐变背景" },
     { title: "间距", text: "4px 模数：4/8/12/16/20/24/32/40" },
-    { title: "禁止", text: "Emoji、自创图标、整页红底铺色" },
+    { title: "Emoji", text: "按需可用：空状态/轻提示/营销；单屏 ≤3；禁止替代导航与主按钮图标" },
+    { title: "禁止", text: "自创功能图标、整页红底铺色" },
   ];
 
   const BRAND_COLORS = [

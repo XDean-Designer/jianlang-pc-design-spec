@@ -837,6 +837,54 @@ code {
   font-weight: 500;
 }
 
+.lab-block__desc {
+  margin: -8px 0 16px;
+  font-size: 13px;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+}
+
+.emoji-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.emoji-demo__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--gray-1);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.emoji-demo__icon {
+  font-size: 28px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.emoji-demo__item strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.emoji-demo__item p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.emoji-demo__item--rank {
+  justify-content: flex-start;
+  gap: 24px;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;

@@ -114,6 +114,12 @@
       "buttonHeightLarge": 36,
       "inputHeight": 32,
       "formLabelWidth": 100
+    },
+    "emoji": {
+      "allowedWhenNeeded": true,
+      "maxPerScreen": 3,
+      "allowedScenes": ["empty", "toast", "marketing", "rankDecor"],
+      "forbiddenScenes": ["nav", "tableActions", "primaryButton", "formRequired"]
     }
   }
 }

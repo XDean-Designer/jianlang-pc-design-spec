@@ -116,6 +116,7 @@
       "formLabelWidth": 100
     },
     "emoji": {
+      "prohibitedInGlobalUI": false,
       "allowedWhenNeeded": true,
       "maxPerScreen": 3,
       "allowedScenes": ["empty", "toast", "marketing", "rankDecor"],
